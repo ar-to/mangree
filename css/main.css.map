@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,CAAE,CACD,UAAU,CALK,OAAO,CAMrB,SAAS,CALC,GAAG,CAMb,gBAAgB,CALP,IAAI,CCCf,MAAM,CAFL,gBAAgB,CAAE,IAAI",
+"sources": ["../sass/base/_reset.scss","../sass/components/_buttons.scss"],
+"names": [],
+"file": "main.css"
+}
