@@ -1,0 +1,232 @@
+//grid
+//@mixers
+//@mixer can be added as property inside a @media were an @extend cannot
+=col-minimum
+  float: left
+=col-1
+  width: (100% / 12)
+=col-2
+  width: 2 / 12 * 100%
+=col-3
+  width: (100% / 4)
+=col-4
+  width: (100% / 3)
+=col-5
+  width: 5 / 12 * 100%
+=col-6
+  width: (100% / 2)
+=col-7
+  width: 7 / 12 * 100%
+=col-8
+  width: 8 / 12 * 100%
+=col-9
+  width: 9 / 12 * 100%
+=col-10
+  width: 10 / 12 * 100%
+=col-11
+  width: 11 / 12 * 100%
+=col-12
+  width: 100%
+//@extend classes
+//class used to @extend properties into columns and group in main.css
+.col-minimum
+  float: left
+.col
+  min-height: 1px
+  padding: 0 12px
+.section
+  margin-right: auto
+  margin-left: auto
+  padding: 0 15px
+  @media (min-width: 960px)
+    width: 80%
+  @media (max-width: 959px)
+    width: 90%
+  @media (max-width: 524px)
+    width: 100%
+.row
+  +clearfix
+.mob-1
+  +col-1
+  @extend .col-minimum
+@media screen
+  .smtab-1
+    @media (min-width: 525px)
+      +col-1
+      +col-minimum
+  .tab-1
+    @media (min-width: 768px)
+      +col-1
+      +col-minimum
+  .lap-1
+    @media (min-width: 960px)
+      +col-1
+      +col-minimum
+//6 col per row
+.mob-2
+  +col-2
+  @extend .col-minimum
+@media screen
+  .smtab-2
+    @media (min-width: 525px)
+      +col-2
+      +col-minimum
+  .tab-2
+    @media (min-width: 768px)
+      +col-2
+      +col-minimum
+  .lap-2
+    @media (min-width: 960px)
+      +col-2
+      +col-minimum
+//4 col per row
+.mob-3
+  +col-3
+  @extend .col-minimum
+@media screen
+  .smtab-3
+    @media (min-width: 525px)
+      +col-3
+      +col-minimum
+  .tab-3
+    @media (min-width: 768px)
+      +col-3
+      +col-minimum
+  .lap-3
+    @media (min-width: 960px)
+      +col-3
+      +col-minimum
+//3 col per row
+.mob-4
+  +col-4
+  @extend .col-minimum
+@media screen
+  .smtab-4
+    @media (min-width: 525px)
+      +col-4
+      +col-minimum
+  .tab-4
+    @media (min-width: 768px)
+      +col-4
+      +col-minimum
+  .lap-4
+    @media (min-width: 960px)
+      +col-4
+      +col-minimum
+.mob-5
+  +col-5
+  @extend .col-minimum
+@media screen
+  .smtab-5
+    @media (min-width: 525px)
+      +col-5
+      +col-minimum
+  .tab-5
+    @media (min-width: 768px)
+      +col-5
+      +col-minimum
+  .lap-5
+    @media (min-width: 960px)
+      +col-5
+      +col-minimum
+//2 col per row
+.mob-6
+  +col-6
+  @extend .col-minimum
+@media screen
+  .smtab-6
+    @media (min-width: 525px)
+      +col-6
+      +col-minimum
+  .tab-6
+    @media (min-width: 768px)
+      +col-6
+      +col-minimum
+  .lap-6
+    @media (min-width: 960px)
+      +col-6
+      +col-minimum
+.mob-7
+  +col-7
+  @extend .col-minimum
+@media screen
+  .smtab-7
+    @media (min-width: 525px)
+      +col-7
+      +col-minimum
+  .tab-7
+    @media (min-width: 768px)
+      +col-7
+      +col-minimum
+  .lap-7
+    @media (min-width: 960px)
+      +col-7
+      +col-minimum
+//1 col-8 with a col-4
+.mob-8
+  +col-8
+  @extend .col-minimum
+@media screen
+  .smtab-8
+    @media (min-width: 525px)
+      +col-8
+      +col-minimum
+  .tab-8
+    @media (min-width: 768px)
+      +col-8
+      +col-minimum
+  .lap-8
+    @media (min-width: 960px)
+      +col-8
+      +col-minimum
+.mob-9
+  +col-9
+  @extend .col-minimum
+@media screen
+  .smtab-9
+    @media (min-width: 525px)
+      +col-9
+      +col-minimum
+  .tab-9
+    @media (min-width: 768px)
+      +col-9
+      +col-minimum
+  .lap-9
+    @media (min-width: 960px)
+      +col-9
+      +col-minimum
+.mob-10
+  +col-10
+  @extend .col-minimum
+@media screen
+  .smtab-10
+    @media (min-width: 525px)
+      +col-10
+      +col-minimum
+  .tab-10
+    @media (min-width: 768px)
+      +col-10
+      +col-minimum
+  .lap-10
+    @media (min-width: 960px)
+      +col-10
+      +col-minimum
+.mob-11
+  +col-11
+  @extend .col-minimum
+@media screen
+  .smtab-11
+    @media (min-width: 525px)
+      +col-11
+      +col-minimum
+  .tab-11
+    @media (min-width: 768px)
+      +col-11
+      +col-minimum
+  .lap-11
+    @media (min-width: 960px)
+      +col-11
+      +col-minimum
+.mob-12
+  +col-12
+  @extend .col-minimum

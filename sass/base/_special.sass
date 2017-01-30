@@ -1,0 +1,19 @@
+//add box-sizing model to prevent total w & h
+//from being affected by padding or borders
+//& use inherit to allow use of content-box and padding-box
+
+html
+  box-sizing: border-box
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+/*Clearfix hack keeps columns(or element) inside the row(or div) and away from floating to other rows*/
+=clearfix
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
