@@ -1,0 +1,89 @@
+.nav
+  padding-top: 20px
+  padding-bottom: 20px
+  background-color: #9383C6
+.logo
+  border: 1px #e6e6e6 solid
+  height: 60px
+  width: 100px
+  float: left
+  background-image: url(http://placehold.it/100x60)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  transition: all 0.4s ease
+#logo.shrink-logo
+  height: 40px
+.logoHide
+  display: none
+ul
+  float: left
+li
+  float: left
+  @media (max-width: 524px)
+    float: left
+  &:last-child
+    border-right: none
+  a
+    display: block
+    padding: 20px 15px
+    float: left
+    text-decoration: none
+    color: #fff
+    transition: all 0.4s ease
+    @media (max-width: 768px)
+      float: none
+      text-align: center
+/*
+ //*Resize
+/*optional to control nav instead of li a
+// *nav.shrink {
+ //  min-height: 35px;
+ //*}
+/*the resize transition
+
+/*the resize height change
+
+#nav.shrink-nav a
+  padding: 10px 15px
+  font-size: 1em
+
+/*
+ //*Resize END
+/*sticky nav
+
+.fixed-nav-bar
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
+  width: 100%
+.fixed-nav-mar
+  margin-top: 85px
+.fixed-nav-pad
+  padding-top: 10px !important
+
+@media screen and (max-width: 768px)
+  #menu
+    display: block
+    font-size: 3em
+    text-align: right
+    color: #fff
+  #nav.js
+    display: none
+  ul
+    width: 100%
+    list-style: none
+    &:first-child
+      margin-top: 20px
+  /*this pseudo selector adds a border on the first li element
+  li
+    width: 100%
+    border-right: none
+    &:first-child
+      border-top: 2px solid black
+
+@media screen and (min-width: 769px)
+  #menu
+    display: none
