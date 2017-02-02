@@ -14,16 +14,24 @@ html(lang='en')
   body
     // Fixed navigation
     nav.nav.fixed-nav-bar
-      #top.section
+      .section
         a(href='http://placehold.it')
           #logo.logo
-        ul#nav
-          li
-            a(href='#') Home
-          li
-            a(href='#code') About
-          li
-            a(href='#') Contact
+        nav#nav
+          ul
+            li
+              a(href='#') Home
+            li
+              a(href='#code') About
+            li
+              a(href='#') Contact
+          ul.ft-right
+            li
+              a(href='#') Log In
+            li
+              a(href='#') Log Out
+      // end section
+    // end nav  
     // div to add margin-top
     .fixed-nav-mar
     // first section needs padding for top
@@ -112,6 +120,20 @@ html(lang='en')
             pre.
     p Welcome to Mangree
     button(type='button') Button
+
+    .section
+      .row
+        .col.smtab-12
+          p To begin using Mangree use the following html to setup grid containers
+    pre.
+      <code class="language-markup">
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col smtab-12&quot;&gt;
+            &lt;p&gt;ff&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code>
 
     br
     br
