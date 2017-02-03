@@ -2,11 +2,25 @@
 
 #### A custom framework created for convenience and availability of javascript effects. It is responsive, easy to use and fun to implement.
 
+## Download Files
+
+##### Files inside [dist](https://github.com/ar-to/mangree/tree/master/dist) are needed to use this framework
+
+```html
+<!--inside <head> tag -->
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--before </body> tag -->
+<!--<script src="jquery url"></script> -->
+<script src="js/main-build.js"></script>
+```
+
+Don't forget to add your JQuery script before main-build.js for scripts dependent on JQuery to work.
+
 ## Setup Grid
 
 ##### Begin by defining the containers
 
-```markup
+```html
 <div class="section">
   <div class="row">
     <div class="col smtab-12">
