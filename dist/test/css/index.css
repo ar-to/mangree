@@ -1,0 +1,50 @@
+/*css for index.html*/
+.sc-color{
+  background-color: #B8ECB8;
+  color: gainsboro;
+}
+.sc-color p{
+  color: #444;
+}
+.rw-color{
+  background-color: #5CC45C;
+}
+.col-cl-1{
+  background-color: #39528D;
+}
+.col-cl-2{
+  background-color: #243E79;
+}
+.col-cl-3{
+  background-color: #566EA4;
+}
+.col-cl-4{
+  background-color: #233C76;
+}
+.col-cl-5{
+  background-color: #6C59A9;
+}
+.col-cl-6{
+  background-color: #503C90;
+}
+.col-cl-7{
+  background-color: #9383C6;
+}
+.col-cl-8{
+  background-color: #392579;
+}
+.col-cl-9{
+  background-color: #F5AE73;
+}
+.col-cl-10{
+  background-color: #FFCA9D;
+}
+.col-cl-11{
+  background-color: #459393;
+}
+.col-cl-12{
+  background-color: #2B7E7E;
+}
+.navbg{
+  background-color: darkslategray
+}
