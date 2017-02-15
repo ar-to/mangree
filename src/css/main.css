@@ -33,6 +33,11 @@ button {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #9383C6; }
+  .nav-color {
+    background-color: blue; }
+
+.clr-change {
+  transition: background-color 0.7s ease; }
 
 .logo {
   border: 1px #e6e6e6 solid;
@@ -47,7 +52,9 @@ button {
   transition: all 0.4s ease; }
 
 #logo.shrink-logo {
-  height: 40px; }
+  height: 40px;
+  width: 80px;
+  margin-top: 10px; }
 
 .logoHide {
   display: none; }
@@ -74,16 +81,11 @@ li {
         float: none;
         text-align: center; } }
 
-/* //*Resize */
-/*optional to control nav instead of li a */
-/*the resize transition */
-/*the resize height change */
-#nav.shrink-nav a {
-  padding: 10px 15px;
-  font-size: 1em; }
+.shrink {
+  transition: all 0.4s ease; }
+  .shrink-nav {
+    padding: 10px 0; }
 
-/* //*Resize END */
-/*sticky nav */
 .fixed-nav-bar {
   position: fixed;
   top: 0;

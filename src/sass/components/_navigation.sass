@@ -2,6 +2,10 @@
   padding-top: 20px
   padding-bottom: 20px
   background-color: #9383C6
+  &-color
+    background-color: blue
+.clr-change
+  transition: background-color 0.7s ease
 .logo
   border: 1px #e6e6e6 solid
   height: 60px
@@ -15,6 +19,8 @@
   transition: all 0.4s ease
 #logo.shrink-logo
   height: 40px
+  width: 80px
+  margin-top: 10px
 .logoHide
   display: none
 ul
@@ -35,24 +41,10 @@ li
     @media (max-width: 768px)
       float: none
       text-align: center
-/*
- //*Resize
-/*optional to control nav instead of li a
-// *nav.shrink {
- //  min-height: 35px;
- //*}
-/*the resize transition
-
-/*the resize height change
-
-#nav.shrink-nav a
-  padding: 10px 15px
-  font-size: 1em
-
-/*
- //*Resize END
-/*sticky nav
-
+.shrink
+  transition: all 0.4s ease
+  &-nav
+    padding: 10px 0
 .fixed-nav-bar
   position: fixed
   top: 0

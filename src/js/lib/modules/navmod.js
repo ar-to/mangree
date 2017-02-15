@@ -32,10 +32,10 @@ define(function(){
         //add nav animation on scroll
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('#nav').addClass('shrink-nav');
+                $('.shrink').addClass('shrink-nav');
                 $('#logo').addClass('shrink-logo');
             } else {
-                $('#nav').removeClass('shrink-nav');
+                $('.shrink').removeClass('shrink-nav');
                 $('#logo').removeClass('shrink-logo');
             }
         }); //end scroll animation
