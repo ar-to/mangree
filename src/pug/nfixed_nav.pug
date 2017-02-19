@@ -1,0 +1,129 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='author', content='ariel')
+    meta(name='description', content='Testing my brand new dev workflow set-up')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='../../css/prism.css')
+    link(rel='stylesheet', type='text/css', href='../../css/main.css')
+    link(rel='stylesheet', type='text/css', href='../../css/index.css')
+    title Mangree - !Fixed Nav Template
+  body
+    .nav
+      #top.section
+        .row
+          a(href='http://placehold.it')
+            .logo.logo-h-mob
+          nav#nav
+            ul
+              li
+                a(href='#') Home
+              li
+                a(href='#code') About
+              li
+                a(href='#') Contact
+            ul.ft-right
+              li
+                a(href='#') Log In
+              li
+                a(href='#') Log Out
+        // end row
+      // end section
+    // end nav
+    .section.sc-color
+      p
+        small
+          | Use your browser developer tools to see the grid respond to different screen sizes.
+      .row.rw-color
+        .col.smtab-12.tab-12.lap-12.col-cl-12 row has margin:auto to left/right and has 80% width.
+        .col.smtab-11.tab-11.lap-11.col-cl-11 col-11-lap
+        .col.smtab-1.tab-1.lap-1.col-cl-1 col-1
+      .row.rw-color
+        .col.lap-8.col-cl-8 col-8-laptop
+        .col.lap-4.col-cl-4 col-4-lap
+        .col.lap-7.col-cl-7 col-7-lap
+        .col.lap-5.col-cl-5 col-5-lap
+        .col.smtab-6.tab-6.lap-6.col-cl-6 col-6-mob col-6-tab col-6-laptop
+        .col.smtab-6.tab-6.lap-6.col-cl-6 col-6-mob col-6-tab col-6-laptop
+      .row.rw-color
+        .col.lap-5.col-cl-5 col-5-lap
+        .col.lap-7.col-cl-7 col-7-lap
+        .col.mob-4.lap-4.col-cl-4 col-4-lap
+        .col.mob-4.lap-4.col-cl-4 col-4-lap
+        .col.mob-4.lap-4.col-cl-4 col-4-lap
+      // row end
+    // end section
+    .section
+      p
+        | To create a non-fixed navigation use the code structure below.
+      pre.
+        <code class="language-markup">
+          &lt;!--not-fixed navigation--&gt;
+          &lt;div class=&quot;nav&quot;&gt;
+          &lt;div class=&quot;section&quot; id=&quot;top&quot;&gt;
+              &lt;div class=&quot;row&quot;&gt;
+                  &lt;a href=&quot;http://placehold.it&quot;&gt;
+                      &lt;div id=&quot;logo&quot; class=&quot;logo&quot;&gt;&lt;/div&gt;
+                  &lt;/a&gt;
+                  &lt;nav id=&quot;nav&quot;&gt;
+                      &lt;ul&gt;
+                          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+
+                      &lt;/ul&gt;
+                      &lt;ul class=&quot;ft-right&quot;&gt;
+                          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Log In&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Log Out&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                  &lt;/nav&gt;
+              &lt;/div&gt;
+              &lt;!--end row--&gt;
+          &lt;/div&gt;
+          &lt;!--end section--&gt;
+          &lt;/div&gt;
+          &lt;!--end nav--&gt;
+        </code>
+      p
+        | Add/Remove the logo shrink with
+        code id='logo'
+        | to the following.
+      pre.
+        <code class="language-markup">
+          &lt;a href=&quot;http://placehold.it&quot;&gt;
+              &lt;div id=&quot;logo&quot; class=&quot;logo&quot;&gt;&lt;/div&gt;
+          &lt;/a&gt;
+        </code>
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    p down
+    a(href='#top') Back to Top
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    // load requireJS after JQuery to avoid getting an error
+    script(src='../../js/bundle.js')
+    //script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')
+    script(src='../../js/prism.js')

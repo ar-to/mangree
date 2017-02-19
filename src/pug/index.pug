@@ -6,17 +6,17 @@ html(lang='en')
     meta(name='description', content='Testing my brand new dev workflow set-up')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(type='stylesheets', href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
-    link(rel='stylesheet', type='text/css', href='css/prism.css')
-    link(rel='stylesheet', type='text/css', href='css/main.css')
-    link(rel='stylesheet', type='text/css', href='css/index.css')
+    link(rel='stylesheet', type='text/css', href='../css/prism.css')
+    link(rel='stylesheet', type='text/css', href='../css/main.css')
+    link(rel='stylesheet', type='text/css', href='../css/index.css')
 
     title Mangree
   body
     // Fixed navigation
-    nav.nav.fixed-nav-bar
+    nav.nav.fixed-nav-bar.shrink.clr-change
       .section
         a(href='http://placehold.it')
-          #logo.logo
+          .logo.shrink
         nav#nav
           ul
             li
@@ -31,9 +31,9 @@ html(lang='en')
             li
               a(href='#') Log Out
       // end section
-    // end nav  
+    // end nav
     // div to add margin-top
-    .fixed-nav-mar
+    #top.fixed-nav-mar
     // first section needs padding for top
     .section.fixed-nav-pad.sc-color
       p
@@ -96,7 +96,7 @@ html(lang='en')
         .col.tab-7.lap-7.col-cl-7 col-7-laptop
         .col.smtab-12.tab-12.lap-12.col-cl-12 col-12-lap
       // row end
-      p This is a section.
+      p This is a section test.
     // section end
     .section
       .row
@@ -104,7 +104,7 @@ html(lang='en')
           | How to Use
           p Set up basic section, row and col
       // row end
-      p This is a section.
+      p This is a section test!.
     // section end
     .section
       .row
@@ -168,6 +168,6 @@ html(lang='en')
 
     script(src='https://code.jquery.com/jquery-3.1.1.min.js')
     // load requireJS after JQuery to avoid getting an error
-    script(src='js/require.js' data-main='js/build.js')
-    script(src='js/prism.js')
-    // script(src='js/nav.js')
+    script(src='../js/bundle.js')
+    //script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')
+    script(src='../js/prism.js')

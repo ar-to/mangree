@@ -1,2 +1,3 @@
 #ignore .sass-cache folders and files
 **/.sass-cache
+**/node_modules

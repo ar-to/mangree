@@ -14,7 +14,7 @@ define(function(){
         $(window).resize(function() {
             if (window.innerWidth <= 524) {
                 //hide logo class with image when mobile
-                $("#logo").addClass("logoHide")
+                $(".logo-h-mob").addClass("logoHide")
             }
         }); //END hide mobile logo
         //removes the style diplay:none on the #nav when window expanded > 768
@@ -23,20 +23,21 @@ define(function(){
                 $("#nav").removeAttr("style");
               }
           }); //END three-line nav
+          //remove logo hide when mobile
         $(window).resize(function() {
             if (window.innerWidth > 524) {
 
-                $("#logo").removeClass("logoHide");//removes logo hide class
+                $(".logo-h-mob").removeClass("logoHide");//removes logo hide class
             }
         }); //END three-line nav
         //add nav animation on scroll
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.shrink').addClass('shrink-nav');
-                $('#logo').addClass('shrink-logo');
+                $('.nav.shrink').addClass('shrink-nav');
+                $('.logo.shrink').addClass('shrink-logo');
             } else {
-                $('.shrink').removeClass('shrink-nav');
-                $('#logo').removeClass('shrink-logo');
+                $('.nav.shrink').removeClass('shrink-nav');
+                $('.logo.shrink').removeClass('shrink-logo');
             }
         }); //end scroll animation
     });//end document ready

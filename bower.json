@@ -1,0 +1,21 @@
+{
+  "name": "mangree",
+  "homepage": "https://github.com/ar-to/mangree.git",
+  "authors": [
+    "Ar-to <aricode0@gmail.com>"
+  ],
+  "description": "mangree is a custom css framework build by ar-to and philosophyanddesign.com",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^5.0.0",
+    "requirejs": "^2.3.2"
+  }
+}
