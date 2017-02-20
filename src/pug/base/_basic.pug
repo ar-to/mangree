@@ -1,0 +1,43 @@
+html
+  head
+    block title
+      title Mangree
+    block meta
+      meta(charset='UTF-8')
+      meta(name='author', content='ariel')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      block description
+        meta(name='description', content='Testing my brand new dev workflow set-up')
+    block link
+      link(type='stylesheets', href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
+      link(rel='stylesheet', type='text/css', href='../css/prism.css')
+      link(rel='stylesheet', type='text/css', href='../css/main.css')
+      link(rel='stylesheet', type='text/css', href='../css/index.css')
+  body
+    block nav
+      // Fixed navigation
+      nav.nav.fixed-nav-bar.shrink.clr-change
+        .section
+          a(href='http://placehold.it')
+            .logo.shrink
+          nav#nav
+            ul
+              li
+                a(href='#') Home
+              li
+                a(href='#code') About
+              li
+                a(href='#') Contact
+            ul.ft-right
+              li
+                a(href='#') Log In
+              li
+                a(href='#') Log Out
+        // end section
+      // end nav
+      // div to add margin-top
+      #top.fixed-nav-mar
+      // first section needs padding for top
+      .section.fixed-nav-pad.sc-color
+        p
+          small Use your browser developer tools to see the grid respond to different screen sizes.

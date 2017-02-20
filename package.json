@@ -15,7 +15,9 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-filter": "^5.0.0",
     "gulp-pug": "^3.2.0",
+    "gulp-pug-inheritance": "^0.2.1",
     "gulp-requirejs-optimize": "^1.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
