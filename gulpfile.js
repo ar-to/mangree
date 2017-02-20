@@ -1,18 +1,20 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var pug = require('gulp-pug');
-var sourcemaps = require('gulp-sourcemaps')
-var requirejsOptimize = require('gulp-requirejs-optimize');//optimizes modules individually & bundle (minify)
-var path = require("path");
+var gulp = require('gulp');//main
+var filter = require('gulp-filter');//filters files with globs
+var uglify = require('gulp-uglify');//used only as needed for dist js vendor files
+var pump = require('pump');//used only on uglify
+var sass = require('gulp-sass');//using
+var autoprefixer = require('gulp-autoprefixer');//using
+var pug = require('gulp-pug');//using
+var pugInheritance = require('gulp-pug-inheritance');//compile only changed files
+var sourcemaps = require('gulp-sourcemaps');//using
+var requirejsOptimize = require('gulp-requirejs-optimize');//using;optimizes modules individually & bundle (minify)
+var path = require("path");//using for callback for pug task
 
 var paths = {
   sass: ['./src/sass/**/*.sass'],
   //sass: ['./src/sass/main.sass'],
   //pug: ['./pug/**/*.pug']
-  pug: ['./src/pug/**/*.pug'],
+  pug: ['./src/pug/**/*.pug'],//takes all files in all directories; exclude by !(_)*.pug if not using gulp-filter
   require: ['./src/js/**/*.js']
 };
 //works: minifyJS and uses pump to handle error similar to a sourcemap but for gulp to compensate for unclear pipe errors
@@ -42,12 +44,17 @@ gulp.task('sass', function () {
 gulp.task('pug', function(done) {
   //gulp.src('./pug/**/*.pug')
   gulp.src(paths.pug)
-  //return gulp.src(paths.pug)
+  //return gulp.src(paths.pug)//used when gulp.dest w/o callback is used; comment .on();
+  //filter out partials (folders and files starting with "_" )
+    .pipe(filter(function (file) {
+            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+    }))
     .pipe(pug({
       //pug options as objects
       pretty: ['true'],//beautifies compiled *.html
     }))
-    //.pipe(gulp.dest('./src/templates'));
+    //.pipe(pugInheritance({basedir: './src/pug/', skip: 'node_modules'}))
+    //.pipe(gulp.dest('./src/templates'));//used with return gulp.src
     .pipe(gulp.dest(callback))//remove return from gulp.src() to avoid returning stream and confusing gulp
     .on('end', done);
 });
@@ -85,6 +92,9 @@ gulp.task('watch', ['sass', 'pug', 'requireopt'], function() {
   //gulp.watch('./src/js/require.config.js', ['requireopt']);
   //works: takes all changes with *.js and updates the bundle.js
   gulp.watch(paths.require, ['requireopt']);
+});
+gulp.task('watchpug', ['pug'], function() {
+  gulp.watch(paths.pug, ['pug']);
 });
 //not used unless folders are desired for compiled *.html files
 function callback(file) {
