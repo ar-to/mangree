@@ -37,6 +37,7 @@
     <!-- first section needs padding for top-->
     <div class="section fixed-nav-pad sc-color">
       <p><small>Use your browser developer tools to see the grid respond to different screen sizes.</small></p>
+      <!--grid-->
       <div class="row rw-color">
         <div class="col smtab-12 tab-12 lap-12 col-cl-12">row has margin:auto to left/right and has 80% width.</div>
         <div class="col smtab-11 tab-11 lap-11 col-cl-11">col-11-lap</div>
@@ -89,9 +90,8 @@
       </div>
       <!-- row end-->
       <p>This is a section.</p>
-    </div>
-    <!-- section end-->
-    <div class="section sc-color">
+      <!-- section end-->
+      <div class="section sc-color"></div>
       <div class="row rw-color">
         <div class="col smtab-6 tab-6 lap-6 col-cl-6">col-6-mob col-6-tab col-6-laptop</div>
         <div class="col smtab-6 tab-6 lap-6 col-cl-6">col-6-mob col-6-tab col-6-laptop</div>
@@ -105,8 +105,8 @@
       </div>
       <!-- row end-->
       <p>This is a section test.</p>
+      <!-- section end-->
     </div>
-    <!-- section end-->
     <div class="section">
       <div class="row">
         <h2>How to Use
@@ -137,8 +137,8 @@
           <p>To begin using Mangree use the following html to setup grid containers</p>
         </div>
       </div>
-    </div>
-    <pre><code class="language-markup">
+      <div class="row">
+        <pre><code class="language-markup">
 &lt;div class=&quot;section&quot;&gt;
   &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;col smtab-12&quot;&gt;
@@ -146,31 +146,15 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code>
-</pre><br><br><br><br><br>
+</pre>
+      </div>
+    </div><br><br><br><br><br>
     <pre id="code"><code class="language-javascript">$(window).resize(function() {
   if (window.innerWidth > 768) {
     $("#nav").removeAttr("style");
   }
-  }); //END three-line nav</code></pre>
-    <pre><code>
-   pre.
-    code</code></pre>
-    <div class="section sc-color">
-      <p><small>Use your browser developer tools to see the grid respond to different screen sizes.</small></p>
-      <div class="row rw-color">
-        <div class="col smtab-12 tab-12 lap-12 col-cl-12">row has margin:auto to left/right and has 80% width.</div>
-        <div class="col smtab-11 tab-11 lap-11 col-cl-11">col-11-lap</div>
-        <div class="col smtab-1 tab-1 lap-1 col-cl-1">col-1</div>
-      </div>
-      <div class="row rw-color">
-        <div class="col lap-8 col-cl-8">col-8-laptop</div>
-        <div class="col lap-4 col-cl-4">col-4-lap</div>
-        <div class="col lap-7 col-cl-7">col-7-lap</div>
-        <div class="col lap-5 col-cl-5">col-5-lap</div>
-        <div class="col smtab-6 tab-6 lap-6 col-cl-6">col-6-mob col-6-tab col-6-laptop</div>
-        <div class="col smtab-6 tab-6 lap-6 col-cl-6">col-6-mob col-6-tab col-6-laptop</div>
-      </div>
-    </div><a href="#top">Back to Top</a>
+  }); //END three-line nav</code>
+</pre><a href="#top">Back to Top</a>
     <!--scripts and copyright info-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!-- load requireJS after JQuery to avoid getting an error-->
