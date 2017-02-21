@@ -93,6 +93,10 @@ gulp.task('watch', ['sass', 'pug', 'requireopt'], function() {
   //works: takes all changes with *.js and updates the bundle.js
   gulp.watch(paths.require, ['requireopt']);
 });
+gulp.task('watchsass', ['sass'], function() {
+  gulp.watch(paths.sass, ['sass']);
+});
+//only pug watch
 gulp.task('watchpug', ['pug'], function() {
   gulp.watch(paths.pug, ['pug']);
 });
