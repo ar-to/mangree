@@ -11,24 +11,8 @@ html(lang='en')
     link(rel='stylesheet', type='text/css', href='../../css/main.css')
     link(rel='stylesheet', type='text/css', href='../../css/index.css')
   body
-    nav.nav.fixed-nav-bar.shrink.clr-change
-      .section
-        a(href='http://placehold.it')
-          #logo.logo
-        nav#nav
-          ul
-            li
-              a(href='#') Home
-            li
-              a(href='#code') About
-            li
-              a(href='#') Contact
-          ul.ft-right
-            li
-              a(href='#') Log In
-            li
-              a(href='#') Log Out
-    #top.fixed-nav-mar.sc-color
+    include components/_fixed_nav.pug
+    // first section needs padding for top
     .section.fixed-nav-pad.sc-color
       p
         small

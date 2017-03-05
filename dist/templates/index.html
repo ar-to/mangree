@@ -14,18 +14,18 @@
   </head>
   <body>
     <!-- Fixed navigation-->
-    <nav class="nav fixed-nav-bar shrink clr-change">
+    <nav class="nav fixed-nav-bar shrink nav-clr-change">
       <div class="section"><a href="http://placehold.it">
           <div class="logo shrink"></div></a>
         <nav id="nav">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#code">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a class="link-clr-change" href="#">Home</a></li>
+            <li><a class="link-clr-change" href="#code">About</a></li>
+            <li><a class="link-clr-change" href="#">Contact</a></li>
           </ul>
           <ul class="ft-right">
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a class="link-clr-change" href="#">Log In</a></li>
+            <li><a class="link-clr-change" href="#">Log Out</a></li>
           </ul>
         </nav>
       </div>
@@ -145,8 +145,21 @@
       &lt;p&gt;ff&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code>
-</pre>
+&lt;/div&gt;</code></pre>
+      </div>
+      <div class="row">
+        <div class="col-smtab-12">
+          <p>Adding<code>class='link-clr-change'</code>
+            to the navbar a tags will change the color on scroll with the when the
+            code class='nav-clr-change'
+            is present in the nav tag.
+          </p>
+        </div>
+        <div class="col-smtab-12">
+          <pre><code class="language-markup">
+  &lt;li&gt;&lt;a class=&quot;link-clr-change&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+        </div>
       </div>
     </div><br><br><br><br><br>
     <pre id="code"><code class="language-javascript">$(window).resize(function() {

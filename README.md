@@ -150,27 +150,39 @@ Mangree comes with [sourcemaps](https://developer.mozilla.org/en-US/docs/Tools/D
 
 ## How to Contribute
 
+#### Things to review before contributing
+
+1. RequireJS and its optimization tool rjs, specially the [options](https://github.com/requirejs/r.js/blob/master/build/example.build.js) for rjs.
+2. Using Gulp for facilitating and automizing tasks
+3. Using PugJS for making html templates
+4. Using Sass for compiling and writing css faster
+5. Understand how globs work for use in Gulp and Javascript directories
+6. Basic knowledge of regex (regular expressions) in Javascript to understand string searching.
+7. Know how to use npm (node package manager) to install modules and have NodeJS installed.
+
+#### Download, Change , Push
+
 Clone repo
-```shell
+```bash
 git clone https://github.com/ar-to/mangree.git
 ```
 
 Create a new branch
 
-```shell
+```bash
 git checkout -b branchname
 ```
 
 Run npm and bower install command to install all dependancies from json files.
 
-```shell
+```bash
 bower install
 npm install
 ```
 
 Make changes, then commit them to your branch and push them to this remote repo
 
-```shell
+```bash
 git add .
 git commit -m 'message'
 git push origin branchname
@@ -178,17 +190,38 @@ git push origin branchname
 
 In GitHub navigate to your branch and click Pull Request. Write your notes regarding what changes you made and why you think they need to be merged to the master repo. Press submit and your request will be reviewed. Any changes to your request will be annotated on it before a final merge can occur.
 
-#### Things to review before contributing
+#### Making changes
 
-1. RequireJS and its optimization tool rjs, specially the [options](https://github.com/requirejs/r.js/blob/master/build/example.build.js) for rjs.
-2. Using Gulp
-3. Using PugJS
-4. Using Sass
-5. Understand how globs work
-6. Know how to use npm to install modules and have NodeJS installed.
+There are various way to about and manipulating the current files into what you want to do and later wish to share and hopefully get merged with master on GitHub. Below are the main tools used in creating Mangree so its recommended to use these tools in development to avoid production problems. 
 
+- PugJS
+- Sass
+- RequireJS
+	- almond.js
+	- r.js
+- Bower
+- NodeJS/NPM
+- Gulp
+- Modernizr
+- Normalize.css
+
+Most of these tools have global CLI (command line interface) installations allowing you to run commands from your shell. Some are ruby gems, others are node packages, so it is up to you whether using global commands is good for your workflow. Mangree does come with alternatives for certain tools such as gulp and modernizr that makes then development dependancies and not required globally. It uses npm scripts to use npm as a build tool similar to gulp. After running `npm install` run the following:
+
+```bash
+$ npm run watch
+#this is the same as running $ gulp watch which is a task inside the gulpfile.js
+#that runs and watches pugjs, sass, and requirejs changes and recompiles all
+```
+This is a convenient alternative to installing global packages and risk getting version errors for not using what what was used in developing Mangree.
 
 ## Dev Known Issues
 
 1. RequireJS script (require.config.js) used to load modules with require.js package does not seem to work. It seems to take the directory from where the .html is and not where it is made to go:
-`script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')`
+```markup
+script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')
+```
+The solution used was to compile the requirejs modules into the single file version and add it as a script to the working .html file.
+```markup
+  <script src="../js/bundle.js"></script>
+    <!--script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')-->
+```

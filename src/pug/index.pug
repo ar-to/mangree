@@ -47,7 +47,19 @@ html
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;</code>
-
+      .row
+        .col-smtab-12
+          p
+            | Adding
+            code class='link-clr-change'
+            | to the navbar a tags will change the color on scroll with the when the
+            | code class='nav-clr-change'
+            | is present in the nav tag.
+        .col-smtab-12
+          pre.
+            <code class="language-markup">
+              &lt;li&gt;&lt;a class=&quot;link-clr-change&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            </code>
     br
     br
     br
@@ -59,7 +71,7 @@ html
             $("#nav").removeAttr("style");
           }
           }); //END three-line nav</code>
-    
+
     a(href='#top') Back to Top
 
     include base/_footer.pug

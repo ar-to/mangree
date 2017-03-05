@@ -6,10 +6,12 @@ define(function() {
 
                 $(window).scroll(function() {
                     if ($(document).scrollTop() > 50) {
-                      $('.clr-change').addClass('nav-color');
+                      $('.nav-clr-change').addClass('nav-color');
+                      $('.link-clr-change').addClass('link-color');
                         //$("#body").addClass("red");
                     } else {
-                      $('.clr-change').removeClass('nav-color');
+                      $('.nav-clr-change').removeClass('nav-color');
+                      $('.link-clr-change').removeClass('link-color');
                     }
                 }); //end scroll
             }); //end document ready
