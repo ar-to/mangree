@@ -156,7 +156,7 @@ Mangree comes with [sourcemaps](https://developer.mozilla.org/en-US/docs/Tools/D
 2. Using Gulp for facilitating and automizing tasks
 3. Using PugJS for making html templates
 4. Using Sass for compiling and writing css faster
-5. Understand how globs work for use in Gulp and Javascript directories
+5. Understand how [globs](http://mywiki.wooledge.org/glob) work for use in Gulp and Javascript directories
 6. Basic knowledge of regex (regular expressions) in Javascript to understand string searching.
 7. Know how to use npm (node package manager) to install modules and have NodeJS installed.
 
