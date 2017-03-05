@@ -205,12 +205,15 @@ There are various way to about and manipulating the current files into what you 
 - Modernizr
 - Normalize.css
 
-Most of these tools have global CLI (command line interface) installations allowing you to run commands from your shell. Some are ruby gems, others are node packages, so it is up to you whether using global commands is good for your workflow. Mangree does come with alternatives for certain tools such as gulp and modernizr that makes then development dependancies and not required globally. It uses npm scripts to use npm as a build tool similar to gulp. After running `npm install` run the following:
+Most of these tools have global CLI (command line interface) installations allowing you to run commands from your shell. Some are ruby gems, others are node packages, so it is up to you whether using global commands is good for your workflow. Mangree does come with alternatives for certain tools such as gulp and modernizr that makes them development dependancies and not required globally. It uses npm scripts to use npm as a build tool similar to gulp. After running `npm install` run the following:
 
 ```bash
 $ npm run watch
 #this is the same as running $ gulp watch which is a task inside the gulpfile.js
 #that runs and watches pugjs, sass, and requirejs changes and recompiles all
+$ npm run modernizr
+#return a new modernizr.js build based on the modernizr.config.json into the 
+#designated directory inside the package.json scripts object
 ```
 This is a convenient alternative to installing global packages and risk getting version errors for not using what what was used in developing Mangree.
 

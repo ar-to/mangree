@@ -8,7 +8,7 @@
     "sass": "gulp watchsass",
     "pug": "gulp watchpug",
     "all": "gulp watch",
-    "modernizr": "modernizr -c modernizr-config.json -u"
+    "modernizr": "./node_modules/.bin/modernizr -c ./tools/modernizr-config.json -u -d ./dist/js/"
   },
   "keywords": [
     "mangree",
