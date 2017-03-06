@@ -2,6 +2,15 @@
 
 #### A custom css framework created for convenience and availability of javascript effects. It is responsive, easy to use and fun to implement.
 
+Mangree provides the following tools to help developers create website that are reponsive and cross-browser capable.
+
+- [Boilerplate](https://github.com/ar-to/boilerplate): a custom boilerplate template used in the development of Mangree
+- Modernizr
+- Normalize.css
+
+#### Table of Contents
+
+
 1. [Download Files](#download-files)
 2. [Setup Grid](#setup-grid)
 3. [Setup Nav](#setup-nav)
