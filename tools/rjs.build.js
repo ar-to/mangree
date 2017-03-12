@@ -7,6 +7,7 @@
     nav_color: 'lib/modules/nav_color'
   },
   include: ['require.config'],//relative to baseUrl
-  name: "../../tools/almond",//relative to baseURL
+  //name: "../../tools/almond",//relative to baseURL
+  name: "../../bower_components/almond/almond",//relative to baseURL
   out: "../dist/js/rjs_bundle.js"//relative to rjs.build.js
 })
