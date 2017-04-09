@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "normalize-css": "^5.0.0",
-    "requirejs": "^2.3.2"
+    "requirejs": "^2.3.2",
+    "almond": "^0.3.3"
   }
 }
