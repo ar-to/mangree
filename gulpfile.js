@@ -14,7 +14,7 @@ var paths = {
   sass: ['./src/sass/**/*.sass'],
   //sass: ['./src/sass/main.sass'],
   //pug: ['./pug/**/*.pug']
-  pug: ['./src/pug/**/*.pug'],//takes all files in all directories; exclude by !(_)*.pug if not using gulp-filter
+  pug: ['./src/pug/**/!(_)*.pug'],//takes all files in all directories; exclude by !(_)*.pug if not using gulp-filter
   require: ['./src/js/**/*.js']
 };
 //works: minifyJS and uses pump to handle error similar to a sourcemap but for gulp to compensate for unclear pipe errors
@@ -43,20 +43,20 @@ gulp.task('sass', function () {
 //$ gulp pug works
 gulp.task('pug', function(done) {
   //gulp.src('./pug/**/*.pug')
-  gulp.src(paths.pug)
+ return gulp.src(paths.pug)
   //return gulp.src(paths.pug)//used when gulp.dest w/o callback is used; comment .on();
   //filter out partials (folders and files starting with "_" )
-    .pipe(filter(function (file) {
-            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-    }))
+    //.pipe(filter(function (file) {
+    //        return !/\/_/.test(file.path) && !/^_/.test(file.relative);//only works on OSX?? but needs to remove !(_) from paths.pug
+    //}))
     .pipe(pug({
       //pug options as objects
       pretty: ['true'],//beautifies compiled *.html
     }))
     //.pipe(pugInheritance({basedir: './src/pug/', skip: 'node_modules'}))
-    //.pipe(gulp.dest('./src/templates'));//used with return gulp.src
-    .pipe(gulp.dest(callback))//remove return from gulp.src() to avoid returning stream and confusing gulp
-    .on('end', done);
+    .pipe(gulp.dest('./dist/templates'));//used with return gulp.src
+    //.pipe(gulp.dest(callback))//remove return from gulp.src() to avoid returning stream and confusing gulp
+    //.on('end', done);
 });
 //requirejsOptimize works : minifies and concatenates modules w/almond into a single working bundle file
 gulp.task('requireopt', function () {
