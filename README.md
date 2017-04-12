@@ -162,7 +162,7 @@ Mangree comes with [sourcemaps](https://developer.mozilla.org/en-US/docs/Tools/D
 #### Things to review before contributing
 
 1. RequireJS and its optimization tool rjs, specially the [options](https://github.com/requirejs/r.js/blob/master/build/example.build.js) for rjs.
-2. Using Gulp for facilitating and automizing tasks
+2. Using Gulp for facilitating and automizing tasks; when running a watch command you need to save the main .pug file for the compile to run and update the html. Saving (_)patials.pug files will not automatically update the compile html file.
 3. Using PugJS for making html templates
 4. Using Sass for compiling and writing css faster
 5. Understand how [globs](http://mywiki.wooledge.org/glob) work for use in Gulp and Javascript directories

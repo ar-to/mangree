@@ -1,5 +1,5 @@
 @mixin bg-color {
-	background-color: #ccc;
+	background-color: gray;
 }
 button{
   @include bg-color;

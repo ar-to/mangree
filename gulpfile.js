@@ -9,13 +9,18 @@ var pugInheritance = require('gulp-pug-inheritance');//compile only changed file
 var sourcemaps = require('gulp-sourcemaps');//using
 var requirejsOptimize = require('gulp-requirejs-optimize');//using;optimizes modules individually & bundle (minify)
 var path = require("path");//using for callback for pug task
+var browserSync = require('browser-sync').create();
 
 var paths = {
-  sass: ['./src/sass/**/*.sass'],
-  //sass: ['./src/sass/main.sass'],
-  //pug: ['./pug/**/*.pug']
-  pug: ['./src/pug/**/!(_)*.pug'],//takes all files in all directories; exclude by !(_)*.pug if not using gulp-filter
-  require: ['./src/js/**/*.js']
+  //sass: ['./src/sass/**/*.sass'],
+  sass: ['./src/sass/main.sass'],
+  pugPartials: ['./src//pug/**/*.pug'],
+  pugMain: ['./src/pug/*.pug'],
+  //pug: ['./src/pug/**/!(_)*.pug'],//takes all files in all directories; exclude by !(_)*.pug if not using gulp-filter; does not work with watch
+  require: ['./src/js/**/*.js'],
+  html: ['./dist/*.html'],
+  css: ['./dist/**/*.css'],
+  js: ['./dist/js/*.js']
 };
 //works: minifyJS and uses pump to handle error similar to a sourcemap but for gulp to compensate for unclear pipe errors
 //bundle.js is already minified but additional files may need it
@@ -43,18 +48,18 @@ gulp.task('sass', function () {
 //$ gulp pug works
 gulp.task('pug', function(done) {
   //gulp.src('./pug/**/*.pug')
- return gulp.src(paths.pug)
+ return gulp.src(paths.pugMain)
   //return gulp.src(paths.pug)//used when gulp.dest w/o callback is used; comment .on();
   //filter out partials (folders and files starting with "_" )
     //.pipe(filter(function (file) {
-    //        return !/\/_/.test(file.path) && !/^_/.test(file.relative);//only works on OSX?? but needs to remove !(_) from paths.pug
+            //return !/\/_/.test(file.path) && !/^_/.test(file.relative);//only works on OSX?? but needs to remove !(_) from paths.pug
     //}))
     .pipe(pug({
       //pug options as objects
       pretty: ['true'],//beautifies compiled *.html
     }))
     //.pipe(pugInheritance({basedir: './src/pug/', skip: 'node_modules'}))
-    .pipe(gulp.dest('./dist/templates'));//used with return gulp.src
+    .pipe(gulp.dest('./dist/'));//used with return gulp.src
     //.pipe(gulp.dest(callback))//remove return from gulp.src() to avoid returning stream and confusing gulp
     //.on('end', done);
 });
@@ -87,7 +92,8 @@ gulp.task('default', ['sass', 'pug', 'requireopt']);
 //$ gulp watch works
 gulp.task('watch', ['sass', 'pug', 'requireopt'], function() {
   gulp.watch(paths.sass, ['sass']);
-  gulp.watch(paths.pug, ['pug']);
+  gulp.watch(paths.pugPartials, ['pug']);
+  gulp.watch(paths.pugMain, ['pug']);
   //saves only changes in require.config.js
   //gulp.watch('./src/js/require.config.js', ['requireopt']);
   //works: takes all changes with *.js and updates the bundle.js
@@ -110,3 +116,26 @@ function callback(file) {
   //return './www/app/' + folder;
   return './dist/templates/' + folder;//used to organize compiled *.html into folders
 }
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+});
+
+// Static server for changes to dist
+gulp.task('serve', ['browser-sync'], function() {
+  gulp.watch(paths.sass, ['sass']);//sass not compiling and browser not reloading
+  gulp.watch(paths.pugPartials, ['pug']);
+  gulp.watch(paths.pugMain, ['pug']);
+  gulp.watch(paths.require, ['requireopt']);
+  gulp.watch(paths.html, browserSync.reload);
+  gulp.watch(paths.css, browserSync.reload);
+  gulp.watch(paths.js, browserSync.reload);
+});
+
+//build for /public
+//gulp.task('build', ['sass', 'pug', 'requireopt']);
