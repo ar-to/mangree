@@ -1,6 +1,0 @@
-@mixin bg-color {
-	background-color: gray;
-}
-button{
-  @include bg-color;
-}

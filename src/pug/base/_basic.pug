@@ -1,18 +1,26 @@
 html
   head
+    //head tag and metatags
     block title
       title Mangree
     block meta
       meta(charset='UTF-8')
-      meta(name='author', content='ariel')
-      meta(name='viewport', content='width=device-width, initial-scale=1.0')
-      block description
+      block author-description
+        meta(name='author', content='ariel')
+      block meta-description
         meta(name='description', content='Testing my brand new dev workflow set-up')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
     block link
       link(type='stylesheets', href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
-      link(rel='stylesheet', type='text/css', href='../../css/prism.css')
-      link(rel='stylesheet', type='text/css', href='../../css/main.css')
-      link(rel='stylesheet', type='text/css', href='../../css/index.css')
+      link(rel='stylesheet', type='text/css', href='./css/mangree.css')
+    block link-extra
   body
     block nav
     block content
+    block footer-scripts
+      //scripts and copyright info
+      script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+      // load requireJS after JQuery to avoid getting an error
+      script(src='./js/mangree.js')
+      //script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')
+      script(src='../temp/modernizr.js')

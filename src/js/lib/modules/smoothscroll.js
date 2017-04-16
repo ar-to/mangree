@@ -1,5 +1,5 @@
 define(function(){
-  console.log('nav script module loaded');
+  console.log('smoothscroll script module loaded');
   return {
     smoothScroll: function() {
 //smooth scroll

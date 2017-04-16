@@ -2,7 +2,7 @@ extends base/_basic.pug
 
 block title
   title Mangree-Grid
-block description
+block meta-description
   meta(name='description', content='Testing my grid')
     
 block nav
@@ -13,3 +13,10 @@ block content
     p
       small Use your browser developer tools to see the grid respond to different screen sizes.
       include components/_grid.pug
+
+    .row  
+      .col-smtab-12
+        pre.
+          <code class="language-markup">
+            &lt;li&gt;&lt;a class=&quot;link-clr-change&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+          </code>

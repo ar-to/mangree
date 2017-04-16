@@ -1,5 +1,5 @@
 define(function(){
-  console.log('nav script module loaded');
+  console.log('navmod script module loaded');
   return {
     navani: function() {
     $(document).ready(function() {
