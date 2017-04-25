@@ -111,6 +111,16 @@ function callback(file) {
   //return './www/app/' + folder;
   return './dist/templates/' + folder;//used to organize compiled *.html into folders
 }
+//copy global files to dist
+gulp.task('js-files', function() {
+  gulp.src('./temp/*.js')
+  .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('png-files', function() {
+  gulp.src('./temp/*.png')
+  .pipe(gulp.dest('./dist/images'));
+});
 
 // Static server
 gulp.task('browser-sync', function() {
@@ -124,7 +134,7 @@ gulp.task('browser-sync', function() {
 });
 
 // Static server for changes to dist
-gulp.task('serve', ['browser-sync'], function() {
+gulp.task('serve', ['browser-sync', 'js-files', 'png-files'], function() {
   gulp.watch(paths.sass, ['sass']);//sass not compiling and browser not reloading
   gulp.watch(paths.pugPartials, ['pug']);
   gulp.watch(paths.pugMain, ['pug']);

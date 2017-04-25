@@ -1,3 +1,4 @@
+//$logo-w: 50px !global
 .nav
   padding-top: 20px
   padding-bottom: 20px
@@ -7,11 +8,11 @@
 .nav-clr-change
   transition: background-color 0.7s ease
 .logo
-  border: 1px #e6e6e6 solid
-  height: 60px
-  width: 100px
+  border: $nav-logo-border
+  height: 50px
+  width: $nav-logo-w
   float: left
-  background-image: url(http://placehold.it/100x60)
+  background-image: url('/images/mangree.png')
   background-repeat: no-repeat
   background-position: center
   background-size: cover
@@ -42,10 +43,6 @@ li
     @media (max-width: 768px)
       float: none
       text-align: center
-.link-clr-change
-  color: #fff
-.link-color
-  color: #000
 .shrink
   transition: all 0.4s ease
   &-nav
@@ -64,9 +61,15 @@ li
 @media screen and (max-width: 768px)
   #menu
     display: block
-    font-size: 3em
-    text-align: right
+    font-size: 2em
+    float: right
     color: #fff
+
+    &.toggle-clr-change
+      color: #fff
+    &.toggle-color
+      color: #000
+
   #nav.js
     display: none
   ul
@@ -79,8 +82,14 @@ li
     width: 100%
     border-right: none
     &:first-child
-      border-top: 2px solid black
+      /*border-top: 2px solid black*/
 
 @media screen and (min-width: 769px)
   #menu
     display: none
+
+//link colors are last to overwrite defaults styles on scroll    
+.link-clr-change
+  color: #fff
+.link-color
+  color: #000

@@ -4,7 +4,7 @@ define(function(){
     navani: function() {
     $(document).ready(function() {
         //adds a class to #nav and a three line div before #nav; diplay style is controlled with css
-        $("#nav").addClass("js").before('<div id="menu">☰</div>');
+        $("#nav").addClass("js").before('<div id="menu" class="toggle-clr-change">☰</div>');
         //adds the toggle on the #nav to open li
         $("#menu").click(function() {
             //$("#nav").toggle();//opens #nav menu on click of #menu without animation

@@ -6,7 +6,7 @@ Mangree provides the following tools to help developers create website that are 
 
 - [Boilerplate](https://github.com/ar-to/boilerplate): a custom boilerplate template used in the development of Mangree
 - Modernizr
-- Normalize.css
+- Normalize.css -not added yet
 
 #### Table of Contents
 
@@ -169,6 +169,16 @@ Mangree comes with [sourcemaps](https://developer.mozilla.org/en-US/docs/Tools/D
 6. Basic knowledge of regex (regular expressions) in Javascript to understand string searching.
 7. Know how to use npm (node package manager) to install modules and have NodeJS installed.
 
+#### Specific things to know
+
+#####RequireJS
+There are three main files for running and updating requirejs:
+- src/js/require.config.js - main file to load modules and run logic
+- tools/rjs.build.js - run optimization r.js tool using CLI;must be in tools folder
+- gulpfile.js. - contains gulp tasks for running and optimizing scripts into dist/js/mangree.js
+
+Some of the reasons behind having different files is because one runs for requireJS specifically, the other for optimizing, and then there is the gulp file which really just runs the optimizer. An important note to keep in mind is that the optimizer uses almond.js as the AMD source over the default require.js mostly due to size.
+
 #### Download, Change , Push
 
 Clone repo
@@ -237,3 +247,4 @@ The solution used was to compile the requirejs modules into the single file vers
   <script src="../js/bundle.js"></script>
     <!--script(src='../../bower_components/requirejs/require.js' data-main='../../src/js/require.config.js')-->
 ```
+2. When removing/adding new scripts as modules or "browser global" such as JQuery, you need to add it to three separate files src/js/require.config.js, tools/rjs.build.js, and gulpfile.js. Reason is I could get it to run r.js and optimize into a single file without getting errors.

@@ -8,10 +8,12 @@ define(function() {
                     if ($(document).scrollTop() > 50) {
                       $('.nav-clr-change').addClass('nav-color');
                       $('.link-clr-change').addClass('link-color');
+                      $('.toggle-clr-change').addClass('toggle-color');
                         //$("#body").addClass("red");
                     } else {
                       $('.nav-clr-change').removeClass('nav-color');
                       $('.link-clr-change').removeClass('link-color');
+                      $('.toggle-clr-change').removeClass('toggle-color');
                     }
                 }); //end scroll
             }); //end document ready
