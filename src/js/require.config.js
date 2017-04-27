@@ -15,7 +15,7 @@ requirejs.config({
     }
 });
 // Require module nav
-  require(['modernizr_script', 'nav', 'smoothscll', 'nav_color', 'prism'],function(modernizr_script, nav, smoothscll, nav_color){
+  require(['modernizr_script', 'nav', 'smoothscll', 'nav_color'],function(modernizr_script, nav, smoothscll, nav_color){
     nav.navani();
     smoothscll.smoothScroll();
     nav_color.nav_color_change();

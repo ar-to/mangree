@@ -4,7 +4,8 @@
   "description": "mangree is a custom css framework build by ar-to and philosophyanddesign.com",
   "main": "index.js",
   "scripts": {
-    "start": "gulp serve",
+    "start": "gulp build",
+    "serve": "gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "rjs": "r.js -o ./tools/rjs.build.js",
     "gsass": "gulp watchsass",
@@ -20,18 +21,24 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
     "gulp-filter": "^5.0.0",
+    "gulp-imagemin": "^3.2.0",
     "gulp-pug": "^3.2.0",
     "gulp-pug-inheritance": "^0.2.1",
     "gulp-requirejs-optimize": "^1.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
     "modernizr": "^3.3.1",
     "pug": "^2.0.0-beta11",
     "pump": "^1.0.2",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "run-sequence": "^1.2.2"
   }
 }
