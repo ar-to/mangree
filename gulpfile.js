@@ -88,16 +88,12 @@ gulp.task('requireopt', function () {
     .pipe(sourcemaps.write('../sourcemaps'))//writes sourcemaps to directory:relative to gulp.dest()!!; comment to remove
     .pipe(gulp.dest('./dist/js'));//output directory
 });
-//$ gulp default works
-gulp.task('default', ['sass', 'pug', 'requireopt']);
+
 //$ gulp watch works
 gulp.task('watch', ['sass', 'pug', 'requireopt'], function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.pugPartials, ['pug']);
   gulp.watch(paths.pugMain, ['pug']);
-  //saves only changes in require.config.js
-  //gulp.watch('./src/js/require.config.js', ['requireopt']);
-  //works: takes all changes with *.js and updates the bundle.js
   gulp.watch(paths.require, ['requireopt']);
 });
 gulp.task('watchsass', ['sass'], function() {
@@ -157,18 +153,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-// Static server for changes to dist, copies global files & reloads browser when compiled files are changed
-gulp.task('serve', ['browser-sync', 'css-files', 'js-files', 'img-files'], function() {
-  gulp.watch(paths.sass, ['sass']);//sass not compiling and browser not reloading
-  gulp.watch(paths.pugPartials, ['pug']);
-  gulp.watch(paths.pugMain, ['pug']);
-  gulp.watch(paths.require, ['requireopt']);
-  gulp.watch(paths.html, browserSync.reload);
-  gulp.watch(paths.css, browserSync.reload);
-  gulp.watch(paths.js, browserSync.reload);
-});
-
-//===Build tasks for optimization/production
+//tasks for optimization/production
 //based on https://css-tricks.com/gulp-for-beginners/
 
 //useref for concatenating js/css files from different directories
@@ -198,14 +183,36 @@ gulp.task('clean:dist', function() {
 gulp.task('clean:public', function() {
   return del.sync('public');
 })
+
+//===Build tasks
+
+//$ gulp ; creates dist folder with all files + global copies
+gulp.task('default', ['sass', 'pug', 'requireopt', 'copy-all']);
+
+//Run server to auto update browser upon file changes
+// Static server for changes to dist, copies global files & reloads browser when compiled files are changed
+gulp.task('serve', ['browser-sync', 'css-files', 'js-files', 'img-files'], function() {
+  gulp.watch(paths.sass, ['sass']);//sass not compiling and browser not reloading
+  gulp.watch(paths.pugPartials, ['pug']);
+  gulp.watch(paths.pugMain, ['pug']);
+  gulp.watch(paths.require, ['requireopt']);
+  gulp.watch(paths.html, browserSync.reload);
+  gulp.watch(paths.css, browserSync.reload);
+  gulp.watch(paths.js, browserSync.reload);
+});
+
+//build public folder
+gulp.task('public', ['useref', 'images']);
+
+//clean by deleting dist, public and clearing cache
+gulp.task('clean-all', ['cache:clear', 'clean:dist', 'clean:public']);
+
 //builds for production the public folder
 gulp.task('build', function (callback) {
   runSequence(
-    ['clean:public', 'clean:dist'],
+    ['clean:dist', 'clean:public'],
     'default',
-    'copy-all',
-    'serve',
-    ['useref', 'images'],
+    'public',
     callback
   )
 })
