@@ -81,7 +81,7 @@ gulp.task('requireopt', function () {
           nav_color: 'modules/nav_color'
         },
         include: ['../require.config'],//relative to baseUrl
-        name: "../../../tools/almond",//relative to baseURL
+        name: "../../../bower_components/almond/almond",//relative to baseURL
         out: "mangree.js"//relative to gulpfile.js or gulp.dest()
       };
     }))
