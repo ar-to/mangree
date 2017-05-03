@@ -1,6 +1,22 @@
 ![Mangree logo](https://github.com/ar-to/mangree/blob/master/src/images/mangree.png)
 # Mangree
 
+## Getting Started
+
+Run the following command inside the CLI to begin using Boilerplate inside your project
+
+``` bash
+$ npm install
+$ bower install
+$ npm start
+$ npm run serve
+$ npm run http
+````
+
+The commmand `npm start` initiates the task `gulp build` which runs all tasks that compile to the dist folder and then public folder. `npm run serve` initiates browsersync server (http://localhost:3000) which will open the site inside the dist folder and will watch for changes inside the src folder making it appropriate for development. `npm run http` will run a basic node server (http://localhost:8080) that will run the site inside the public folder but will not watch for changes therefore only for viewing the site for production.
+
+```
+
 #### A custom css framework created for convenience and availability of javascript effects. It is responsive, easy to use and fun to implement.
 
 Mangree provides the following tools to help developers create website that are reponsive and cross-browser capable.
