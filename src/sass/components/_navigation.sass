@@ -1,10 +1,17 @@
-//$logo-w: 50px !global
+
+#nav
+  @media screen and (max-width: 768px)
+    overflow: scroll
+    height: 100vh
+    padding-bottom: 60px
 .nav
   padding-top: 20px
   padding-bottom: 20px
   background-color: #E6A439
   &-color
     background-color: white
+    @media screen and (max-width: 768px)
+      background-color: #E6A439
 .nav-clr-change
   transition: background-color 0.7s ease
 .logo
@@ -77,12 +84,12 @@ li
     list-style: none
     &:first-child
       margin-top: 20px
-  /*this pseudo selector adds a border on the first li element
+  //this pseudo selector adds a border on the first li element
   li
     width: 100%
     border-right: none
     &:first-child
-      /*border-top: 2px solid black*/
+      border-top: 2px solid adjust-color(#E6A439, $hue: 5deg, $lightness: -20%)
 
 @media screen and (min-width: 769px)
   #menu
@@ -93,3 +100,8 @@ li
   color: #fff
 .link-color
   color: #000
+
+//fixes mobile li issue when when opening between logo and toggle
+.hamburger-div
+  @media screen and (max-width: 768px)
+    height: 50px

@@ -11,9 +11,10 @@ $ bower install
 $ npm start
 $ npm run serve
 $ npm run http
+$ npm run clean
 ````
 
-The commmand `npm start` initiates the task `gulp build` which runs all tasks that compile to the dist folder and then public folder. `npm run serve` initiates browsersync server (http://localhost:3000) which will open the site inside the dist folder and will watch for changes inside the src folder making it appropriate for development. `npm run http` will run a basic node server (http://localhost:8080) that will run the site inside the public folder but will not watch for changes therefore only for viewing the site for production.
+The commmand `npm start` initiates the task `gulp build` which runs all tasks that compile to the dist folder and then public folder. `npm run serve` initiates browsersync server (http://localhost:3000) which will open the site inside the dist folder and will watch for changes inside the src folder making it appropriate for development. `npm run http` will run a basic node server (http://localhost:8080) that will run the site inside the public folder but will not watch for changes therefore only for viewing the site for production. Finally, `npm run clean` removes the dist and public folder
 
 ```
 
